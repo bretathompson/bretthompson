@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet and Animal Objects</title>
+</head>
+<body>
+    <h1>Planet </h1>
+    <div id="planet-info"></div>
+
+    <h1>Animals </h1>
+    <div id="animal-info"></div>
+
+    <script>
+
+        let planet = new Object();
+        planet.name = "Flower",
+        planet.size = "Medium",
+        planet.color = "Green",
+        planet.show = function() {
+        document.getElementById("planet-info").innerHTML =(
+            "Name: " + planet.name + "<br>" +
+            "Size: " + planet.size + "<br>" +
+            "Color: " + planet.color + "<br>" );
+    };
+        planet.show();
+   
+        // function Planet(name, size, color) {
+        //     this.name = name;
+        //     this.size = size;
+        //     this.color = color;
+        // }
+        // const earth = new Planet("Flower", "Medium", "Green");
+
+        // document.getElementById("planet-info").innerHTML = (
+        //     "Name: " + earth.name + "<br>" +
+        //     "Size: " + earth.size + "<br>" +
+        //     "Color: " + earth.color );
+              
+        
+
+        function Animal(name, location, habitat) {
+            this.name = name;
+            this.location = location;
+            this.habitat = habitat;
+        }
+        
+
+        const favAnimal = new Animal("Lion", "Africa", "Zoo");
+        const animDetails = document.getElementById("animal-info");
+        
+        animDetails.innerHTML = (
+            "Name: " + favAnimal.name + "<br>" +
+            "Location: " + favAnimal.location + "<br>" +
+            "Habitat: " + favAnimal.habitat + "<br>");
+           
+        const userInput1 = prompt("Enter the animal's name:");
+        const userInput2 = prompt("Enter its location:");
+        const userInput3 = prompt("Enter its habitat:");
+
+        const userInputArray = [userInput1, userInput2, userInput3];
+        const newAnimal = new Animal(userInputArray[0], userInputArray[1], userInputArray[2]);
+
+        document.getElementById("animal-info").innerHTML += ( "<br>" +
+            "Name: " + newAnimal.name + "<br>" +
+            "Location: " + newAnimal.location + "<br>" +
+            "Habitat: " + newAnimal.habitat + "<br>");
+
+    </script>
+</body>
+</html>
+

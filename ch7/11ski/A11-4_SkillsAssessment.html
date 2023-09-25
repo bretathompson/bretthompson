@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+    <style>
+        @font-face {
+            src: url('fonts/Monoton-Regular.ttf');
+            font-family: monoton; 
+        }
+        body {
+            background-color: #fbf152;
+            color: #30c8f1;
+            font-family: 'Courier New';
+            font-size: 30px;
+        }
+        main {
+            width: 500px;
+            background-color: #b543ee;
+            padding: 0 10px 10px 10px;
+            margin: auto;
+            border: 5px solid hotpink;
+        }
+        main h1 {
+            text-align: center;
+            font-family: monoton;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Popular 80s Toys</h1>
+
+        <script>
+
+       let toys = [
+                "Atari 2600",
+                "Transformers",
+                "Playstation",
+                "Star Wars Figurines",
+                "Lite Brite",
+                "Waterfall Ring Toss",
+                "Rock em Sock em Robots",
+                "Lazer Tag",
+                "Kong Man"
+       ];
+
+            console.log(toys);
+
+        toys.push("Game Boy");
+            console.log(toys);
+
+        toys.unshift("View Master");
+            console.log(toys);
+
+    
+
+        let PS4 = toys.indexOf("Playstation");
+            if (PS4 !== -1) {
+                toys.splice(PS4, 1);
+    }
+            console.log(toys);
+
+
+        toys.sort();
+            console.log(toys); 
+            
+
+    let result = "";
+    for (let i = 0; i < toys.length; i++) {
+        result += "- " + toys[i] + "<br>";
+    }
+            console.log(result);
+            
+            document.write(result);
+
+        </script>
+    </main>
+</body>
+</html>
+
+
+<!-- Use console.log to log each step to the console -->
+
+    <!-- 1. Create an array named 'toys' that holds the top 80s toys. Include these values: 
+    - Atari 2600
+    - Transformers
+    - Playstation
+    - Star Wars Figurines
+    - Lite Brite
+    - Waterfall Ring Toss
+    - Rock em Sock em Robots
+    - Lazer Tag
+    - Kong Man -->
+
+<!-- 2. Use a JavaScript method to add the following to the end of the array: 'Game Boy' -->
+
+<!-- 3. Use a JavaScript method to add the following to the beginning of the array: 'View Master' -->
+
+<!-- 4. Playstation came out in the 90s, not the 80s. Use a JavaScript method to remove it from the array -->
+
+<!-- 5. Many people disagree on which 80s toy is the best. Use a JavaScript method to sort the array
+in alphabetical order -->
+
+<!-- 6. Use a FOR loop to loop through the array and write the array information to the page. Precede each entry
+        with a hyphen and a space. Write each array element on a separate line. Example:
+            - Atari 2600
+            - Game Boy
+            - Kong Man
+            ... -->
+        

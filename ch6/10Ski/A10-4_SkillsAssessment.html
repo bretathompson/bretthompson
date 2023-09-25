@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditionals and Loops</title>
+</head>
+<body>
+    <!-- Create your code between the <script> tags below -->
+    <!-- PART ONE
+        1. Create three variables with the following names and values:
+            - a, 5
+            - b, 8
+            - c, -1
+        2. Create a conditional that compares all 3 numbers and returns a popup message stating which number
+        is largest. Use logical operators (and, or, etc.). You may not use min( ) or max( ) for the comparison.
+        You need to use a conditional.
+        Example output: "8 is the largest number"
+    -->
+
+    <!-- PART TWO 
+        1. Write a FOR loop that iterates from 0 to 20. For each iteration, write to the screen whether the number is even or
+        odd (on separate lines). Use the modulus operator(%) to check if the number is even or odd. HINT: Divide the number
+        by 2 and if modulus returns a remainder of zero, the number is even. Example output:
+            1 is odd    
+            2 is even
+    -->
+
+    <script>
+        let a = 5,
+            b = 8,
+            c = -1;
+
+        if (a > b && a > c) {
+            window.alert(a + " is the largest number");
+        } else if (b > a && b > c) {
+            window.alert(b + " is the largest number");
+        } else {
+            window.alert(c + " is the largest number");
+        }
+
+        for (let i = 0; i <= 20; i++) {
+            if (i % 2 === 0) {
+                document.write(i + " is even <br>");
+            } else {
+                document.write(i + " is odd <br>");
+            }
+        }
+        
+    </script>
+</body>
+</html>

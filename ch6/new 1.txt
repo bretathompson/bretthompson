@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let unitedArray = ["T", "H", "E", "U", "N", "I", "T", "E", "D", "S", "T", "A", "T", "E", "S", "O", "F", "A", "M", "E", "R", "I", "C", "A"];
+		document.write(unitedArray + "<br>");
+
+/*Don't forget to use document.write followed by a <br> tag to display the array in the browser for each step */
+/* STEP 1: Create a function that allows a user to remove elements from an array that are chosen by the user. Name the function "removeElement". 
+Include the following parameters: array, element. After creating the function, use it to remove all letter E's from the provided array */
+
+/* STEP 2: Use the same removeElement() function to remove all letter A's */
+
+/* STEP 3: Use the splice() method to remove the first letter I. (The second letter I will remain in the array) */	
+
+/* STEP 4: Create a function that will replace an element in the array with a new element. Name the function "replaceElement". 
+Include the following parameters: array, toReplace, replacement. After creating the function, use it to replace all letter F's with the letter A */
+
+/* STEP 5: Create a function that will move an element to the front of an array. Name the function "moveToFront". 
+Include the following parameters: array, element. Use the splice() method to remove the element and another method to add the element to 
+the front of the array. After creating the function, use it to move the two letter S's to the front of the array */
+
+/* STEP 6: Use the previously created removeElement() function to remove all of the letter T's from the array. 
+HINT: Sometimes when you loop through an array that has two elements that are the same next to each other and you remove the first element, 
+the loop will skip the second element. The reason why is because it removes the first element which makes all of the other elements shift to 
+the left inside the array. This way the second element is now in the same place where the first element was located. Then the iterator increases 
+and moves on to the next element. Because of this, you may need to modify the "removeElement" function to include i--; inside the IF statement to 
+decrement the iterator of the loop after it removes an item. */
+
+/* STEP 7: Use the splice() method to remove the first vowel in the array and a different method to remove the last consonant in the array */
+
+/* STEP 8: Move the fourth and fifth letters to the end of the array. The fourth letter should precede with the fifth letter following. 
+Use the splice method to remove both letters and another method to add the letters to the end of the array. HINT: Use a variable to hold 
+the letters before adding them to the end. */
+
+/* STEP 9: Use the previously created replaceElement() function to replace all letter S's with the letter L */
+
+/* STEP 10: Remove the 6th, 7th, and 8th letters from the array */
+	
+/* STEP 11: Move the two letter L's to become the 3rd and 4th letters in the array */
+
+/* The array should now spell out the word HOLLAND. If it doesn't, check your code before submitting */
+    </script>
+</body>
+</html>
