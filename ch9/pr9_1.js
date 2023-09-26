@@ -1,8 +1,13 @@
-let computer = {
-    speed: "4 GHZ",
-    hd: "500GB",
-    ram: "8GB"
-};
-document.write("Computer Speed: " + computer.speed + "<br>");
-document.write("Computer Hard Disk: " + computer.hd + "<br>");
-document.write("Computer RAM: " + computer.ram );
+
+
+let titleValue = document.getElementById("div1").getAttribute("title");
+window.alert(titleValue);
+
+let newDiv = document.createElement("div");
+newDiv.textContent = "see you!";
+newDiv.setAttribute("title", "Lucky!");
+
+div1.appendChild(newDiv);
+
+
+
