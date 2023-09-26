@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="photoContainer">
+        <img src="Bunnies.jpg" alt="Dogs dressed like bunnies">
+        <p id="catchPhrase"><q>What's Up Doc?</q></p>
+    </div>
+    <script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    // a. Change the background color of the entire page to #FFD4E5
+    document.body.style.backgroundColor = "#FFD4E5";
+
+    // b. Change the following on the PhotoContainer div:
+    var photoContainer = document.getElementById("photoContainer");
+    photoContainer.style.backgroundColor = "#E0CDFF";
+    photoContainer.style.width = "800px";
+    photoContainer.style.textAlign = "center";
+    photoContainer.style.paddingTop = "25px";
+    photoContainer.style.paddingBottom = "5px";
+    photoContainer.style.margin = "auto";
+
+    // c. Change the following on the catchPhrase paragraph:
+    var catchPhrase = document.getElementById("catchPhrase");
+    catchPhrase.style.fontFamily = "Tahoma, sans-serif";
+    catchPhrase.style.fontSize = "1.5em";
+
+    // d. Change the following on the bunnies image:
+    var bunniesImage = document.querySelector("#photoContainer img");
+    bunniesImage.style.cursor = "pointer";
+    bunniesImage.style.border = "6px ridge #B7D784";
+
+    // e. Add a click event to apply the changes when the user clicks on the image
+    bunniesImage.onclick = function() {
+        // Perform the same style changes as above here if needed
+    };
+});
+
+
+    </script>
+</body>
+</html>
+
+
+

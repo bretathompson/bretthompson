@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>DOM Node Tree</title>
+  </head>
+  <body>
+	<h1>Node Trees</h1>
+	<p>Paragraph 1</p> 	   
+	 
+	<p>Paragraph 2</p>
+	<p><img></p>
+  </body>
+</html>
+
+https://miro.com/
+
+https://miro.com/app/board/uXjVMhXaqR4=/?share_link_id=75689832612#tpicker-content
