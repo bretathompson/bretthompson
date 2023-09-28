@@ -155,7 +155,7 @@
     </aside>
 
     <div id="mainContentContainer">
-        <div id="cardContainer">
+        <div id="cardContainer">            
         </div>
     </div>
 
@@ -182,117 +182,8 @@
   </footer>
 
   <script type="text/javascript" src="js/products.js"></script>
-  <script type="text/javascript" src="js/shop1.js"></script>
+  <script type="text/javascript" src="js/shop.js"></script>
 </body>
 </html>    
-
-
-    <!-- 2. Inside the forEach method, use the cardContainer variable with the innerHTML property and a template literal to add each card to the page: -->
-        <!-- a2. You will not be able to use the assignment operator (=) on this step or each card that is rendered inside the cardContainer div will 
-            overwrite the previous card when it iterates. Use the addition assignment operator (+=) instead -->
-        <!-- b2. Move the code that you copied and pasted in step 2 inside the forEach method. Replace the product information (name, description, etc.) 
-            of the Clown Umbrella card with string literals to accomplish this task (Example: ${individualCard.id}). This way, all cards will render on 
-            the page, not just the Clown Umbrella card. Each card should include the following: -->
-            <!-- i. A div with the class of 'card' and an id with the text of 'cardNumber' ending with the id number of the card. For example, if the id 
-                number of the product is 5, the id of the product should be id="cardNumber5". But, we don't want to hard-code these. Instead, we want to 
-                populate the information from the products array. Use the id property from the products array to populate the id number (${individualCard.id}) -->
-            <!-- ii. An image of the product -->
-                <!-- aii. Use the image property for the image source and the description property from the products array for the alt attribute of the image tag -->
-            <!-- iii. A div with the class of 'cardText'. The following should be inside the cardText div (don't forget to use template strings to 
-                populate the correct information): -->
-                <!-- aiii. An <h4> with the name of the product -->
-                <!-- biii. A <p> tag with the description of the product -->
-                <!-- ciii. A <p> tag with &dollar; and the price of the product -->
-                <!-- diii. A <button> tag with a class of cartButton -->
-                    <!-- diii1. The text of the button should be 'Add to Cart' -->
-                    <!-- diii2. Create a new id on the <button> tag. The id of the button tag will be set to the id property of the product in the 
-                        products array. For example: id="${individualCard.id}". This id number will be used later to match a product on the page with 
-                        the product inside the products array -->
-<!-- f. Call the function directly below the function declaration -->
-
-
-
-
-
-
-
-
-
-
-<!-- Task 1: Create the Products Array: -->
-<!-- Before we populate the shop.html page with the products, we will create an array that holds every product. This way, all of our products are in one  -->
-<!-- place and it's easy to add/remove products. The array will contain an object for each product. The object will include a unique numerical id, a pathway  -->
-<!-- to the image of the product, the name of the product, a description of the product, a quantity, and the price of the product. -->
-
-<!-- a. Create a new JavaScript file named 'products.js' inside a new folder named 'js' -->
-    <!-- 1. Place the js folder inside the ShoppingExperience folder -->
-    <!-- 2. All JavaScript for this task should be inside the products.js file -->
-    <!-- 3. Inside the shop.html page, add an HTML element directly below the closing </footer> tag to connect the products.js file to the shop.html page -->
-
-<!-- b. Inside the products.js file, create a constant named imagePath that will hold the file pathway to the location of your images. 
-    This variable will be used inside our product objects to point to the image location. We could do this without creating a variable by 
-    simply including the pathway as a value for each item in the object, but it is better to place it in a variable so we only have to update one 
-    piece of code instead of multiple lines of code if the images are relocated or new products are added. Here's what the code should look like: -->
-<!-- const imagePath = "images/shop/thumbnails/"; -->
-
-<!-- c. Create an array of objects directly below the imagePath constant: -->
-    <!-- 1. Assign the array to a variable named 'products' -->
-    <!-- 2. Inside the array, create one object for all 8 available products -->
-        <!-- a1. Each object will contain the following properties (in the order given): -->
-            <!-- id -> A unique number identifier. Set this to an incrementing number. Start with number 1 for the first product and increment the number by 1 
-                for each subsequent product (1, 2, 3, 4, etc.). This will be used to add/remove products from the cart in a later exercise -->
-            <!-- image -> The name and path to the image. Use the images in the 'thumbnails' folder. Example:  image: imagePath + "ClownUmbrella_thumb.jpg" -->
-            <!-- name -> The name of the product -->
-            <!-- description -> The description of the product -->
-            <!-- quantity -> The quantity of the product being added to the cart. Set this to 1 -->
-            <!-- price -> The price of the product -->
-            
-    <!-- 3. The products should be listed in the array in the following order with the accompanying descriptions and prices:  -->
-            <!-- id	image	name	description	price -->
-            <!-- 1	ClownUmbrella_Thumb.jpg	Clown Umbrella	A porcelain figurine of a clown holding an umbrella and riding a unicycle	29.95 -->
-            <!-- 2	ElephantFigurines_Thumb.jpg	Elephant Figurines	White elephant ceramic figurines decorated with various fine color	18.95 -->
-            <!-- 3	SquishyCaterpillar_Thumb.jpg	Squishy Caterpillar	A squashy, spiky, multi-colored caterpillar	9.99 -->
-            <!-- 4	MiniCactus_Thumb.jpg	Mini Cactus	A miniature cactus in a pink vase	12.99 -->
-            <!-- 5	Nanoblocks_Thumb.jpg	Nano Nanoblocks	The smallest connection blocks on the market	32.95 -->
-            <!-- 6	CuteGoat_Thumb.jpg	Cute Goat	A small white ceramic goat	15.95 -->
-            <!-- 7	LawnGnome_Thumb.jpg	Lawn Gnome	An angry lawn gnome holding a/ sign that says 'GO AWAY!	7.95 -->
-            <!-- 8	BobRoss_Thumb.jpg	Bob Ross	A Bob Ross plastic figure holding a paint palette	18.95  -->
-    <!-- 4. You should have a total of 8 products when finished -->
-
-
-
-
-<!-- Task 2: Populate shop.html Using the Array: -->
-
-<!-- We will use JavaScript to populate the shop.html page. We want the products in the product.js file to be easy to find so we won't add any other
-     JavaScript to the products.js file other than the products themselves. Instead, we will create a new JavaScript file. -->
-
-<!-- a. Create a new file named 'shop.js' -->
-    <!-- 1. Place the file inside the js folder -->
-    <!-- 2. Inside the shop.html page, add an HTML element directly below the link to the products.js page (you created this in task 1) to connect 
-        the shop.js file to the shop.html page -->
-
-<!-- b. We will populate the products on the shop.html page using the array object we created in task 1. We no longer need the hard-coded information 
-    for each card that is currently in the shop.html page.  Instead, we will use the forEach method to iterate over the array and populate each card on 
-    the page. In order to do so, we will copy the HTML code for one card to use as a reference. Copy and paste the HTML code for the Clown Umbrella card 
-    from the shop.html page to the shop.js page (All code in between and including the div with the class of card). We will use this code later in this 
-    task, so add some whitespace above the code inside the shop.js page by pressing the ENTER key a few times above the code. We will come back to the code in a bit -->
-    
-<!-- c. In the shop.html page, delete the three hard-coded product cards between the div tags with the id of cardContainer since they are no 
-    longer needed (keep the cardContainer div) -->
-
-<!-- d. In the whitespace at the top of the shop.js page, create a constant named 'cardContainer'. Use the querySelector( ) method to get the div 
-    with the id of cardContainer from the shop.html page. Assign the result to the constant. This container will be used to display the product cards on the page -->
-
-<!-- e. Directly below the constant, create a new function named 'addProducts'. This will be used to add each product card to the page: -->
-    <!-- 1. Inside the function, use the forEach method to iterate over each product in the products array -->
-        <!-- a1. Use an arrow function inside the method and include a parameter named 'individualCard'. This parameter will be used later in a 
-            template literal to write the information of each product card to the page -->
-
-
-
-
-
-
 
 
