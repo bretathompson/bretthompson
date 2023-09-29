@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Trickle Down VS Bubble UP!</title>
+<meta charset="utf-8">
+<style>
+    div {
+        background-color: #deb887;
+        border: 1px solid black;
+        padding: 50px;
+    }
+    div p {
+        background-color: #f0ffff;
+        padding: 10px;
+        color: black;
+        font: sans-serif 1em black;
+        border: 2px dotted black;
+    }
+</style>
+</head>
+<body>
+    
+  <div id="myDiv">
+    <p id="myP">Click this paragraph, I am Bubbling.</p>
+  </div><br>
+
+  <div id="myDiv2">
+    <p id="myP2">Click this paragraph, I am Capturing</p>
+  </div>
+   
+    <script>
+        document.getElementById("myP").addEventListener("click", function() {
+            alert("You clicked the P element!");
+        }, false);
+
+        document.getElementById("myDiv").addEventListener("click", function() {
+            alert("You clicked the DIV element!");
+        }, false);
+
+        document.getElementById("myP2").addEventListener("click", function() {
+            alert("You clicked the P element!");
+        }, true);
+
+        document.getElementById("myDiv2").addEventListener("click", function() {
+            alert("You clicked the DIV element!");
+        }, true);
+
+    </script>
+</body>
+</html>
+
+
