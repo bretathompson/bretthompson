@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #smImage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            z-index: 0;
+        }
+
+        #lgImage {
+            position: absolute;
+            top: 170px;
+            left: 170px;
+            width: 600px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="photoContainer">
+        <img id="smImage" src="snowman.png" alt="Small snowman">
+        <img id="lgImage" src="snowman1.png" alt="Big snowman">
+    </div>
+
+    <script>
+        const smallImage = document.getElementById("smImage");
+        const largeImage = document.getElementById("lgImage");
+        
+        function hideLgImage() {
+            largeImage.style.display = "none";
+        }
+        function showLgImage() {
+            largeImage.style.display = "block";
+        }
+
+        smallImage.addEventListener("mouseenter", showLgImage);
+        smallImage.addEventListener("mouseleave", hideLgImage);
+
+    </script>
+</body>
+</html>
+
+
