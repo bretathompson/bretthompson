@@ -26,9 +26,9 @@
     <aside>
         <div id="sideBarHeading">
             ORDER SUMMARY
-            </div>
+        </div>
 
-        <div id="sideBarContainer">    
+         <div id="sideBarContainer">    
             
             <div class="tableRow">
                 <div class="tableCell"> 
@@ -47,24 +47,6 @@
                     &dollar; 3.00
                 </div>                                
             </div>
-
-            <div class="tableRow">
-                <div class="tableCell borderBottom" > 
-                    Sales Tax
-                </div>
-                <div class="tableCell borderBottom">
-                    &dollar; 3.59
-                </div>                                
-            </div>
-
-            <div class="tableRow">
-                <div class="tableCell"> 
-                    Total
-                </div>
-                <div class="tableCell bold">
-                    &dollar; 65.48
-                </div>                                
-            </div>     
 
         </div>
         
@@ -144,167 +126,9 @@
     </div>
 
   </footer>
+  <script type="text/javascript" src="js/products.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/shop.js"></script>
 </body>
 
 </html>    
-
-
-
-<!-- Task 1: Prepare the Cart HTML: -->
-<!-- Currently our sidebar cart information on the shop.html page is hard-coded. The first thing we need to do is remove the hard-coded information.  -->
-
-<!-- a. Inside the shop.html page, delete all information within the div with an id of sideBarContainer except for the first two table rows 
-    (the Clown Umbrella table row and the table row with the Remove button). We will use this information inside a JavaScript file in a later task -->
-<!-- (Do not accidentally delete the cart buttons) -->
-
-
-<!-- Task 2: Create app.js and the cart Array: -->
-<!-- Each item that is added to the shopping cart will be added to an array named cart. The cart array will be the place that we will change 
-    the items in the cart. Any changes will happen in this array so that we don't accidentally mess up the cart items in the local storage. 
-    We can add items to the array and remove items from the array, which will reflect in our shopping cart displayed on the screen. We will 
-    create this array in a new file named app.js. This file will contain all JavaScript code that is shared between the three HTML files. The 
-    cart array will be used on both the shop.html page and the cart.html page, so it is included in the app.js page. -->
-
-<!-- a. Create a new JavaScript file inside the js folder. Name the file 'app.js' -->
-<!-- b. At the top of the file, create an empty array named 'cart'. Again, this array will be used to hold all current items that are 
-    in the user's shopping cart -->
-<!-- c. Add <script> tags that point to the app.js file directly below the <script> tags for products.js on the shop.html page. 
-    (the app.js call will be located between the products.js and shop.js script calls) -->
-
-
-
-    <!-- Task 3: Create a Function to Save Products to Local Storage: -->
-    <!-- When a user clicks on the Add to Cart button of a product, we will add that product to the cart array. The items in the 
-        cart array will then be added to local storage so we can refresh the page and still see the products in the cart. The display 
-        of the cart will be created in another task. -->
-    
-    <!-- a. Inside the shop.js page, create a new function named 'saveToLocalStorage' directly below the addProducts( ) function call. 
-        Through the next steps, we will use this function to add a click event to each Add to Cart button. The function will then loop 
-        through the buttons on the page and compare the button information with the information of the products in the products array and 
-        find the matching product of the product that the user clicked. The information from the matched product will then be placed into 
-        the cart array and the array will be saved to local storage -->
-    <!-- b. We need to select every Add to Cart button on the shop.html page and add a click event to them to make them clickable. Inside 
-        the saveToLocalStorage( ) function declaration, create a new variable named 'cartButton' and use getElementsByClassName( ) to grab 
-        any items with the class name of cartButton -->
-    <!-- c. Below the variable, create a FOR loop that loops through all the cart buttons in the cartButton variable -->
-        <!-- 1. Inside the loop use an event listener to add a click event to each individual button -->
-    <!-- d. Inside the click event, include an anonymous function as the callback function -->
-    <!-- e. Inside the callback function create a variable named 'selectedProduct'. Set the variable to the following: -->
-            <!-- let selectedProduct = products.find( (product) => product.id == cartButton[i].id); -->
-    <!-- This piece of code finds the product in the products array where the id property of the product in the products array matches the 
-            current item's id attribute that the user just clicked. Here is an explanation of the code: -->
-        <!-- 1. let selectedProduct-> This creates a variable named selectedProduct -->
-        <!-- 2. products.find( ) -> This selects the products array (found in products.js) and adds the find( ) method to it. The find( ) 
-            method returns the value of the first element that passes a test. The following items explain the test that is passed to the find( ) method. -->
-        <!-- 3. (product) => -> Inside the find( ) method we run an arrow function. The function takes in one parameter named product. This parameter 
-            will represent the current product that is being looped over inside the products array by the find( ) method -->
-        <!-- 4. product.id -> The first property for every object in the products array is an id number (Example: id: 1, id: 2, etc.). This piece 
-            of code selects the id number of each product in the products array -->
-        <!-- 5. == cartButton[i].id -> This selects the id number of the currently selected product on which the Add to Cart button was clicked. 
-            This id is then compared to the id of the product in the products array -->
-    <!-- f. Directly below the selectedProduct variable declaration inside the event listener callback function, use the push( ) method to push 
-            the matched selectedProduct into the cart array that you created in the previous task -->
-    <!-- g. Also inside the event listener callback function, directly below the push( ) method, add the cart items to local storage using a key 
-            named 'CART". Use the following code: -->
-            <!-- localStorage.setItem("CART", JSON.stringify(cart) ); -->
-    <!-- Here is an explanation of the code: -->
-        <!-- 1. localStorage.setItem -> Creates a new entry in the local storage -->
-        <!-- 2. "CART" -> Creates a new key in local storage named CART -->
-        <!-- 3. JSON.stringify(cart) -> This code changes the cart array into a string. Remember, local storage only accepts string values. This is 
-            assigned as the value of the CART key -->
-    <!-- h. Call the saveToLocalStorage( ) function directly below the function declaration -->
-
-    
-    <!-- Task 4: Create the Display Cart Function: -->
-    <!-- This task will focus on displaying the items that the user has added to the shopping cart. These items will be populated by transferring 
-        the information in local storage to the cart array. The cart array will then be used to populate the shopping cart. The display of the cart 
-        items will be created using a loop and a template literal. -->
-    
-    <!-- a. Before we begin, we need to use JavaScript to select the sideBarContainer div of our site. The sideBarContainer can be found on both the 
-        shop.html page and the cart.html page. Because we are using the same container on both pages, we want to place the code to select this container 
-        on the app.js page. Remember, the app.js page will hold the JS code that is used on more than one page of our site. On the app.js page, directly 
-        below the the cart array declaration, create a new constant named 'sideBarContainer' that uses querySelector( ) to select any element with the id 
-        of sideBarContainer -->
-    <!-- b. We will base the display of the shopping cart on what is currently inside local storage. We will move the local storage information into the 
-        cart array so we can manipulate it. We will use this same process in multiple areas of our site, so it's best to put this code into a function. 
-        Create a new function named 'clearStorageAndCart' directly below the sideBarContainer constant delcaration. Do the following inside the function: -->
-        <!-- 1. Before we move the information from local storage to the cart array, we need to clear any information that is currently inside the 
-            cart array. This will help prevent any duplicate entries. Inside the clearStorageAndCart function, assign an empty array to the cart array 
-            to delete any information inside -->
-        <!-- 2. Next, we need to grab the information inside local storage. Directly below the empty array, create a variable named 'currentStorage' and 
-            set it to the current contents of the local storage. Remember, the local storage is stored with the key of CART. Don't forget to use JSON.parse( ) 
-            to parse the string into an object so it can be used in the next steps. When finished, your code should look like this: -->
-            <!-- let currentStorage = JSON.parse(localStorage.getItem('CART')); -->
-        <!-- 3. Now, we need to place the information in the currentStorage variable into the cart array. We will use an IF statement to do this because we 
-            only want to move what is in local storage if there is something there. Create an IF statement to see if anything currently resides in the 
-            currentStorage variable. You can use this code: -->
-            <!-- if(currentStorage) { -->
-        <!-- 4. Inside the IF statement, assign the currentStorage variable to the the cart array. This will place the items from the local storage inside the cart array -->
-    <!-- c. The code to display the cart will be created inside a function. The sideBarContainer contents will be different on the shop.html and the cart.html 
-        pages, so this function will be created on the shop.js page, not the app.js page. Create a new function named 'displayCart' directly below the 
-        saveToLocalStorage function call inside the shop.js file -->
-    <!-- d. The first thing we want to do inside this function is to clear the local storage and the cart array. We created a function to do this in step 2. 
-        Inside the displayCart function make a function call to the clearStorageAndCart function -->
-    <!-- e. Next, we want to clear the contents that are currently displaying on the page in the shopping cart. We want to do this each time the shopping cart 
-        is displayed. This will help prevent duplicate entries displaying in the cart display. Directly below the clearStorageAndCart function inside the 
-        displayCart function, use the innerHTML property to assign the contents of the sideBarContainer constant to an empty string -->
-    <!-- f. To display the items of the cart onto the page, we will use a loop and a template literal like we did when we created the addProducts function 
-        to display the products on the page. -->
-        <!-- 1. Inside the displayCart function directly below the sideBarContainer empty string, create a forEach loop that loops through the items inside 
-            the cart array -->
-            <!-- 1a. Use an arrow function inside the loop for the callback -->
-            <!-- 1b. Include a parameter named 'cartItem'. This parameter will be used to display the information from one specific cart item to the page -->
-        <!-- 2. We will use the sideBarContainer constant with the innerHTML property to add the items to the page. However, we cannot use the assignment 
-            operator (=) or every time it loops through the cart items it will overwrite the previous item, and we will only be able to display one item in 
-            our cart. To prevent this, we will use the addition assignment operator (+=). Inside the arrow function, use the sideBarContainer constant with 
-            the innerHTML property and the addition assignment operator to assign it to a template literal. The template literal will be used to display the 
-            HTML code for the shopping cart items -->
-        <!-- 3. Copy the two table rows and cells for the Clown Umbrella entry in the sideBarContainer div on the shop.html page and paste it inside the template 
-            literal on the shop.js page. -->
-            <!-- 3a. When finished, delete the Clown Umbrella row and cells inside the sideBarContainer div on the shop.html page because it is no longer needed -->
-        <!-- 4. The copied code in the template literal on the shop.js page should include the following in the order given. Modify the correct information to 
-            use template strings to display each item to the page instead of the hard-coded information: -->
-            <!-- 4a. Two divs with the class of tableRow -->
-            <!-- 4b. The first tableRow div will include two divs with the class of tableCell -->
-                <!-- i. The first tableCell div will display the name of the cart item currently being looped through. Remember to use a template string in place 
-                    of the Clown Umbrella hard-coded information. Example: ${cartItem.name} -->
-                <!-- ii. The second tableCell div will display the price of the cart item (using a template string) currently being looped through, including a 
-                    dollar sign using &dollar; -->
-            <!-- 4c. The second tableRow div will include: -->
-                <!-- i. A div with the classes of tableCell and borderBottom. The contents of the div will be blank. This div uses the borderBottom class to add 
-                    a line between the products of the shopping cart to create a visual separation -->
-                <!-- ii. An anchor tag with the following 3 classes: tableCell, borderBottom, removeLink. Again, the borderBottom class is used to create visual 
-                    separation between cart items. The removeLink class is used to style the Remove link -->
-                    <!-- ii1. Create an id attribute on the anchor tag. Set the id attribute to the id property of the current cart item. Example: id="${cartItem.id}". 
-                        This will be used later to match the Remove link to the item to be removed inside the cart array and local storage -->
-                    <!-- ii2. The href of the anchor tag should be set to a pound sign (#) so the link keeps the user on the current page when clicked. 
-                        Example: href="#" -->
-                    <!-- ii3. The text between the anchor tags will be the word 'Remove' -->
-    <!-- g. For now, we need to call the displayCart function twice. Once to display the cart when the page is first loaded. Again, when an item is saved to 
-        local storage. This will update the display of our cart when the user clicks the Add to Cart button -->
-        <!-- 1. Create the first call directly below the displayCart( ) function declaration. This calls when the page first loads -->
-        <!-- 2. Create the second call inside the bottom of the saveToLocalStorage( ) function directly below the local storage setItem code. This will refresh 
-            the display of the cart every time the user clicks the Add to Cart button -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

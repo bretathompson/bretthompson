@@ -5,7 +5,6 @@ const cardContainer = document.querySelector('#cardContainer');
 function addProducts() {
     let cardInfo = '';
     
-    // cardContainer.innerHTML += `<div> ... </div`;
 
     products.forEach((individualCard) => {
       cardInfo += `
@@ -22,6 +21,51 @@ function addProducts() {
 
     cardContainer.innerHTML = cardInfo;
 }
-
 addProducts();
 
+
+function saveToLocalStorage() {
+    let cartButton = document.getElementsByClassName("cartButton");
+
+    for (let i = 0; i < cartButton.length; i++) {
+        let addButton = cartButton[i];
+
+        addButton.addEventListener("click", function(event) {
+            event.preventDefault();
+
+
+            let selectedProduct = products.find( (product) => product.id == cartButton[i].id);
+
+            cart.push(selectedProduct);
+
+            localStorage.setItem("CART", JSON.stringify(cart));
+
+            displayCart();
+        });
+    }
+}
+saveToLocalStorage();
+
+
+function displayCart() {
+    clearStorageAndCart();
+    sideBarContainer.innerHTML = "";
+
+    cart.forEach((cartItem) => {
+        sideBarContainer.innerHTML += `
+            <div class="tableRow">
+                <div class="tableCell">
+                    ${cartItem.name} 
+                </div>
+                <div class="tableCell">
+                    &dollar; ${cartItem.price}
+                </div>
+            </div>
+            <div class="tableRow">            
+                <div class="tableCell borderBottom"></div> 
+                <a href="#" class="tableCell borderBottom removeLink" id="${cartItem.id}">Remove</a>
+            </div>`;
+    });
+}
+displayCart();
+            
