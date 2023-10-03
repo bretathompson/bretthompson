@@ -14,8 +14,6 @@ nav {
 #links {
     background-color: #037DBE;
     padding: 5px 0;
-    padding-left: 0;
-    padding-right: 0;
 }
 
 nav a {
@@ -123,7 +121,7 @@ footer {
 
 .tableCell {
     display: table-cell;
-    padding-top: 10px;
+    padding: 10px, 0;
 }
 
 .tableCell:first-child {

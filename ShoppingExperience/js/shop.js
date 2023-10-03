@@ -4,6 +4,8 @@ const cardContainer = document.querySelector('#cardContainer');
 
 function addProducts() {
     let cardInfo = '';
+    
+    // cardContainer.innerHTML += `<div> ... </div`;
 
     products.forEach((individualCard) => {
       cardInfo += `
