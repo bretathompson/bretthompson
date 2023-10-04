@@ -86,7 +86,7 @@ displayCart();
 const checkoutButton = document.getElementById('checkoutButton');
 
 checkoutButton.addEventListener('click', () => {
-    window.location.href = 'cart.html';
+    window.location = 'cart.html';
 });
 
 
