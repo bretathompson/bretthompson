@@ -121,7 +121,7 @@ footer {
 
 .tableCell {
     display: table-cell;
-    padding: 10px, 0;
+    padding: 10px 0;
 }
 
 .tableCell:first-child {
