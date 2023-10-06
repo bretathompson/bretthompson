@@ -14,8 +14,6 @@ function clearStorageAndCart() {
     }
 }
 
-clearStorageAndCart();
-
 
 function removeFromCart() {
     let removeLinks = document.getElementsByClassName('removeLink');
@@ -40,12 +38,11 @@ function removeFromCart() {
 
             localStorage.setItem('CART', JSON.stringify(cart) );
 
-            displayCart()
+            displayCart();
 
         });
     }
 }
-removeFromCart();
 
 
 

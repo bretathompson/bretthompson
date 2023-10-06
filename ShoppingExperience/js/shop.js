@@ -1,7 +1,6 @@
 
 
 const cardContainer = document.querySelector('#cardContainer');
-
 function addProducts() {
     let cardInfo = '';
     
@@ -18,7 +17,6 @@ function addProducts() {
                 </div>
             </div>`;
     });
-
     cardContainer.innerHTML = cardInfo;
 }
 addProducts();
@@ -66,13 +64,8 @@ function displayCart() {
                 <a href="#" class="tableCell borderBottom removeLink" id="${cartItem.id}">Remove</a>
             </div>`;
     });
-    let removeLinks = document.getElementsByClassName('removeLink');
 
-    for (let i = 0; i < removeLinks.length; i++) {
-        removeLinks[i].addEventListener('click', (event) => {
-            removeFromCart(event); 
-        });
-    }
+    removeFromCart();
 
     if (cart.length === 0) {
         localStorage.clear();
@@ -84,9 +77,8 @@ displayCart();
 
 
 const checkoutButton = document.getElementById('checkoutButton');
-
 checkoutButton.addEventListener('click', () => {
-    window.location = 'cart.html';
+    window.location.href = 'cart.html';
 });
 
 
