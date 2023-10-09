@@ -32,13 +32,17 @@ function removeFromCart() {
                 }
             }
                 
-            if (itemIndex !== -1) {
-                cart.splice(itemIndex, 1);
-            }
+            // if (itemIndex !== -1) {
+            //     cart.splice(itemIndex, 1);
+            // }
 
             localStorage.setItem('CART', JSON.stringify(cart) );
 
             displayCart();
+
+            if (cart.length == 0) {
+                localStorage.clear();
+               }
 
         });
     }

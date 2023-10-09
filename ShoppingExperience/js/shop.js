@@ -64,12 +64,7 @@ function displayCart() {
                 <a href="#" class="tableCell borderBottom removeLink" id="${cartItem.id}">Remove</a>
             </div>`;
     });
-
     removeFromCart();
-
-    if (cart.length === 0) {
-        localStorage.clear();
-    }
 
 }
 displayCart();
