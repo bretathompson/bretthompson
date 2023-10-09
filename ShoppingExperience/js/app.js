@@ -32,9 +32,8 @@ function removeFromCart() {
                 }
             }
                 
-            // if (itemIndex !== -1) {
-            //     cart.splice(itemIndex, 1);
-            // }
+            cart.splice(itemIndex, 1);
+                        
 
             localStorage.setItem('CART', JSON.stringify(cart) );
 
