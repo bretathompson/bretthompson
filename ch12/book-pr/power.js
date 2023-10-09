@@ -1,3 +1,4 @@
+
 let pow_form = document.getElementById('getpow');
 pow_form.addEventListener('submit', function(event) {
     let base = document.getElementById('base').value,
