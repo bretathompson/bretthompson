@@ -6,6 +6,7 @@ function set_it() {
     text += expdate;
     document.cookie = text;
 }
+
 function read_it() {
     let cookie = document.cookie;
     propval = cookie.split(';');
@@ -24,22 +25,22 @@ function read_it() {
 
 // https://www.w3schools.com/js/js_cookies.asp
 
-
-function set_it() {
-    const date = new Date();
-    date.setTime(date.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    let expires = "expires="+ date.toUTCString();
-    document.cookie = ";" + expires + ";path=/";
-}
+function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays*24));
+    let expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
 
 function read_it() {
-    let name = getCookie("username");
-    if (name != "") {
-        alert("Welcome  " + name + "!");
+    let username = getCookie("username");
+    if (username != "") {
+        alert("Welcome  " + username + "!");
     } else {
-        name = prompt("Please enter your name:", "");
-        if (name != "" && name != null) {
-            setCookie("username", name, 365);
+        username = prompt("Please enter your name:", "");
+
+        if (username != "" && username != null) {
+            setCookie("username", username, 365);
         }
     }
 }
