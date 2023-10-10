@@ -1,14 +1,14 @@
 
-let urls = [ 'http://www.github.com',
-    'http://www.espn.net',
-    'http://www.duckduckgo.com',
-    'http://www.yahoo.com',
-    'http://www.google.com'
-],
-
-rdiv = document.getElementById('random_link'),
-rand = Math.floor(Math.random() * 5);
-rdiv.innerHTML = '<a href="' + urls[rand] + '">Random Sites!</a>';
+let comp_string = "orange";
+    new_string = "apple";
+    pos = comp_string.localeCompare(new_string);
+    if (pos < 0) {
+        alert(comp_string + " comes before " + new_string);
+    } else if (pos > 0) {
+        alert(comp_string + " comes after " + new_string);
+    } else {
+        alert("The strings are equal");
+    }
 
 
 

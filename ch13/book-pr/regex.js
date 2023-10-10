@@ -1,14 +1,16 @@
 
-let urls = [ 'http://www.github.com',
-    'http://www.espn.net',
-    'http://www.duckduckgo.com',
-    'http://www.yahoo.com',
-    'http://www.google.com'
-],
-
-rdiv = document.getElementById('random_link'),
-rand = Math.floor(Math.random() * 5);
-rdiv.innerHTML = '<a href="' + urls[rand] + '">Random Sites!</a>';
+let has_digits = document.getElementById("has_digits");
+has_digits.addEventListener("submit", function(event) {
+    let has_num = document.getElementById("user_text").value,
+        tomatch = /\d+/;
+    event.preventDefault(); 
+    
+    if (tomatch.test(has_num)) {
+        alert("Your entry contained one or more numbers!");
+    } else {
+        alert("Your entry did not contain any numbers!");
+    }
+}, false);
 
 
 
