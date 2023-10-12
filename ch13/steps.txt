@@ -1,0 +1,46 @@
+// Task:
+// In this exercise, you will collect a zip code from a user and validate that it is in the correct format.
+
+// 1. Create an HTML form that will collect a zip code from the user
+// 2. Use an event listener and function to check the user's entry against a regular expression (RegEx object)
+//     a. The zip code should be nine digits with a hyphen after the fifth digit
+//         Ex: 12345-6789
+//     b. The zip code cannot contain anything but numbers, or it is considered invalid
+// 3. Display to the screen whether the zip code is valid or not using descriptive text
+//     a. Any type of display is permissible
+//     b. ** The zip code number should be shown in the result
+
+// Invalid Zip Code Examples:
+// The Entry, 4567p-2212 is not Valid. Please try again
+// The Entry, 356112222 is not Valid. Please try again
+// The Entry, 45670-3622212 is not Valid. Please try again
+
+// Valid Examples:
+// The Entry, 90620-5214 is a Valid entry!
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const zipCode = document.getElementById('zipCode');
+    const localzip = document.getElementById('localzip');
+    const result = document.getElementById('result');
+    
+    // Event listener for form submission
+    zipCode.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const zipNumber = localzip.value.trim();
+        
+        // Regular expression for a valid ZIP code (12345-6789)
+        const zipPattern = /^\d{5}-\d{4}$/;
+        
+        if (zipPattern.test(zipNumber)) {
+            result.textContent = `The Entry, ${zipNumber} is a Valid entry!`;
+            result.classList.add('valid');
+            result.classList.remove('invalid');
+        } else {
+            result.textContent = `The Entry, ${zipNumber} is not Valid. Please try again`;
+            result.classList.add('invalid');
+            result.classList.remove('valid');
+        }
+    });
+});
