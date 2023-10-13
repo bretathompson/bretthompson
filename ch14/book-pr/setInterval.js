@@ -1,14 +1,12 @@
 
-let getemail = document.getElementById("getemail");
-    getemail.addEventListener("submit", function(event) {
-        let email_add = document.getElementById("email").value;
+let madness = setInterval (function() {
+    alert("Am I bothering you yet?");
+}, 3000);
+
+let stop_it = document.getElementById("stop_it");
+    stop_it.addEventListener("click", function(event) {
         event.preventDefault();
-        
-        if ((email_add.indexOf("@") >= 0) && (email_add.indexOf(".") >= 0)) {
-            alert("Thank you!");
-        } else {
-            alert("The @ and . characters are required in the e-mail address.");
-        }
+            clearInterval(madness);
     }, false);
 
 

@@ -1,16 +1,27 @@
 
-let getemail = document.getElementById("getemail");
-    getemail.addEventListener("submit", function(event) {
-        let email_add = document.getElementById("email").value;
-        event.preventDefault();
-        
-        if ((email_add.indexOf("@") >= 0) && (email_add.indexOf(".") >= 0)) {
-            alert("Thank you!");
-        } else {
-            alert("The @ and . characters are required in the e-mail address.");
-        }
+let im = document.getElementById("pic1");
+
+    im.addEventListener("mouseover", function() {
+        im.src = image1.gif;
+    }, false);
+
+    im.addEventListener("mouseout", function() {
+        im.src = "image2.gif";
     }, false);
 
 
+
+    // this code I think does what it should be doing 
+    
+// document.getElementById("pic1").addEventListener("mouseover", changeimage);
+// document.getElementById("pic1").addEventListener("mouseout", changeimage2);
+
+// function changeimage() {
+//     let image = document.getElementById("pic1").src = "image1.gif";
+// }
+
+// function changeimage2() {
+//     let image = document.getElementById("pic1").src = "image2.gif";
+// }
 
 
