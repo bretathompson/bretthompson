@@ -1,11 +1,19 @@
 
-let my_win = window.innerWidth;
-    if (my_win >= 1000) {
-        window.location = "http://github.com";
-    } else {
-        window.location = "http://developer.mozilla.org";
-    }
 
+let s_form = document.getElementById("signup_form");
 
+    s_form.addEventListener("submit", function(event) {
 
-
+        let food_array = document.getElementsByName("food");
+        selection_made = false;
+        for (let i = 0; i < food_array.length; i++) {
+            if (food_array[i].checked) {
+                selection_made = true;
+                break;
+            }
+        } 
+        if (!selection_made) {
+            event.preventDefault();
+            alert('Error: A favorite food must be selected');
+        }
+    }, false);
