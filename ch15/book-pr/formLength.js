@@ -1,10 +1,8 @@
 
-let my_win = window.innerWidth;
-    if (my_win >= 1000) {
-        window.location = "http://github.com";
-    } else {
-        window.location = "http://developer.mozilla.org";
-    }
+for (let count=0; count <document.forms.length; count++) {
+    let formnum = count +1;
+    document.write(`Form ${formnum} has ${document.forms[count].length} elements.<br>`);
+}
 
 
 
