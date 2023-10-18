@@ -5,13 +5,9 @@ getphone.addEventListener("submit", function(event) {
     let phone = document.getElementById("phone").value,
     tomatch = /^\d{3}-\d{3}-\d{4}$/;
     event.preventDefault();
-    if (tomatch.test(phone)) {
-        alert("Phone nubmer validated.");
-    } else {
+    if (!tomatch.test(phone)) {
         alert("Invalid phone number entered. Valid format is xxx-xxx-xxxx.");
     }
 }, false);
-
-
 
 

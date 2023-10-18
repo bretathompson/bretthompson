@@ -1,10 +1,12 @@
 
-let my_win = window.innerWidth;
-    if (my_win >= 1000) {
-        window.location = "http://github.com";
-    } else {
-        window.location = "http://developer.mozilla.org";
-    }
+let s_form = document.getElementById("signup_form");
+    s_form.addEventListener("submit", function(event) {
+        let agree = document.getElementById("agree");
+        if (!agree.checked) {
+            event.preventDefault();
+            alert('Error: The "Agree to Temrs" checkbox must be checked');
+        }
+    }, false);
 
 
 
