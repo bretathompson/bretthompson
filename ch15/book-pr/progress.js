@@ -12,7 +12,7 @@ grade = document.getElementById("grade");
 qform.addEventListener("submit", function(event) {
     let num_correct = 0,
     num_questions = qs.length,
-    grade_HTML = "";
+    grade_HTML = "",
     score = 0;
     event.preventDefault();
 
@@ -22,7 +22,7 @@ qform.addEventListener("submit", function(event) {
         }
     }
     score = Math.round(num_correct / num_questions * 100);
-    grade_HTML = '<progress max="100' ;
+    grade_HTML = '<progress max="100" ' ;
     grade_HTML += 'value="' + score + '">';
     grade_HTML += score + '%</progress> ';
     grade_HTML += 'Grade: ' + score + '%';
