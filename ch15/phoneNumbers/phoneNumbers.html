@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>15-1</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="phoneNumbers.css">
+</head>
+<body>
+    <h2>phoneNumbers</h2>
+
+    <h2>Form 1</h2>
+   <form id="yellowForm" name="yellowForm">
+        <label for="yellowphone">Input Phone:</label>
+        <input type="text" id="yellowPhone"><br><br>
+        <div id="format"> Format: 888 888 8888: <br><br></div>
+
+        <input type="button" value="Click Button" id="yellowButton">
+   </form> 
+
+
+   <h2>Form 2</h2>
+   <form id="blueForm" name="blueForm">
+        <label for="bluephone">Input Phone:</label>
+        <input type="text" id="bluephone"><br><br>
+        <div id="format">Format: (888)888-8888:<br><br></div>
+       
+        <input type="submit" value="Submit Button" id="blueButton">
+   </form>    
+
+
+    <script type="text/javascript" src="phoneNumbers.js"></script>
+</body>
+</html>
+
+<!-- Task: In this exercise, you will create two separate forms that will accept and validate two separate phone numbers. put javascript between the script tags.-->
+
+<!-- 1. Create two HTML forms (one colored yellow - #FFFFCC, one colored blue - #CCFFFF) -->
+<!-- 2. Use CSS to design the forms to look as much like the images below -->
+<!-- 3. Yellow Form:
+    3a. The yellow form's button must have an input type of "button"
+    3b. Use an event listener that fires when the button is clicked
+    3c. Use a regular expression to ensure the number uses this format: 888 888 8888
+      3c1. There should be a space in between each group of numbers -->
+<!-- 4. Blue Form:
+    4a. The blue form's button must have an input type of "submit"
+    4b. Use an event listener that fires when the form is submitted
+    4c. Use a regular expression to ensure the number uses this format: (888)888-8888
+        4c1. Don't forget the parenthesis and hyphen -->
+<!-- 5. Both forms should use an alert to inform the user if the number is "good" or "bad" -->
+

@@ -1,0 +1,32 @@
+
+
+#yellowForm {
+    background-color: #FFFFCC;
+    width: 300px;
+    border: 2px solid;
+    padding: 80px;
+    margin: 10px;
+}
+
+input[type="button"] {
+    display: block;
+    margin: auto;
+}
+
+#blueForm {
+    background-color: #CCFFFF;
+    width: 300px;
+    border: 2px solid;
+    padding: 80px;
+    margin: 10px;
+}
+
+input[type="submit"] {
+    display: block;
+    margin: auto;
+}
+
+#format {
+    text-align: center;
+}
+
