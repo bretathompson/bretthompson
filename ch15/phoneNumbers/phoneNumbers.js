@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const yellowPattern = /^\d{3} \d{3} \d{4}$/;
 
         if (yellowPattern.test(yellowNumber)) {
-            alert("Yellow Form: Phone number is good.");
+            alert("Your phone number was formatted correctly.");
         } else {
-            alert("Yellow Form: Phone number is bad.");
+            alert("The phone number must be formatted as follows: 888 888 8888.");
         }
     });
 
@@ -29,9 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const bluePattern = /^\(\d{3}\)\d{3}-\d{4}$/;
 
         if (bluePattern.test(blueNumber)) {
-            alert("Blue Form: Phone number is good.");
+            alert("Your phone number was formatted correctly.");
         } else {
-            alert("Blue Form: Phone number is bad.");
+            alert("The phone number must be formatted as follows: (888)888-8888.");
         }
     });
     
