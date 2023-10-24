@@ -49,10 +49,13 @@ function removeFromCart() {
                 localStorage.clear();
             }
 
+            if (typeof displayOrderSummary === "function") {
+                displayOrderSummary();
+            }
+
         });
     }
 }
-
 
 
 function clearCart() {
@@ -70,7 +73,15 @@ function clearCart() {
         if (typeof displayCartProducts === "function") {
             displayCartProducts( );
         }
+
+        if (typeof displayOrderSummary === "function") {
+            displayOrderSummary();
+        }
+
     });
 }
 clearCart();
+
+
+
 
