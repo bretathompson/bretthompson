@@ -37,11 +37,17 @@ function removeFromCart() {
 
             localStorage.setItem('CART', JSON.stringify(cart) );
 
-            displayCart();
+            if (typeof displayCart === "function") {
+                displayCart();
+            }
+
+            if (typeof displayCartProducts === "function") {
+                displayCartProducts();
+            }
 
             if (cart.length == 0) {
                 localStorage.clear();
-               }
+            }
 
         });
     }
@@ -57,7 +63,14 @@ function clearCart() {
 
         localStorage.clear();
 
-        displayCart();
+        if (typeof displayCart === "function") {
+            displayCart();
+        }
+
+        if (typeof displayCartProducts === "function") {
+            displayCartProducts( );
+        }
     });
 }
 clearCart();
+

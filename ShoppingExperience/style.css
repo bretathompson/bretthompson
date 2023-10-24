@@ -254,6 +254,8 @@ footer {
     text-align: right;
 }
 
-
-
+#emptyCart {
+    font-style: italic;
+    margin: 0;
+}
 
