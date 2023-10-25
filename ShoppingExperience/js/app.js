@@ -43,14 +43,11 @@ function removeFromCart() {
 
             if (typeof displayCartProducts === "function") {
                 displayCartProducts();
+                displayOrderSummary();
             }
 
             if (cart.length == 0) {
                 localStorage.clear();
-            }
-
-            if (typeof displayOrderSummary === "function") {
-                displayOrderSummary();
             }
 
         });
@@ -72,9 +69,6 @@ function clearCart() {
 
         if (typeof displayCartProducts === "function") {
             displayCartProducts( );
-        }
-
-        if (typeof displayOrderSummary === "function") {
             displayOrderSummary();
         }
 

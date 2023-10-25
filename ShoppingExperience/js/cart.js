@@ -54,7 +54,6 @@ function calculateOrderSummary() {
     tax = (subtotal + shipping) * 0.061;
     total = subtotal + shipping + tax;
 }
-calculateOrderSummary();
 
 
 
