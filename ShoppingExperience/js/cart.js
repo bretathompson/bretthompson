@@ -12,22 +12,22 @@ function displayCartProducts() {
             cartCardContainer.innerHTML += `
                 <div class="cartCard">
                     <div class="cartCardFlex">
-                        <img src="${cartItem.image}" alt="${cartItem.name}">
+                        <img src="${cartItem.image}" alt="${cartItem.description}">
                         <p class="cartTitle">${cartItem.name}</p>
                         <p class="cartDescription">${cartItem.description}</p>
                         <div class="cartQuantity">
                             <input type="number" value="${cartItem.quantity}" min="1" max="5">
                         </div>
-                        <p class="cartPrice">$${cartItem.price}</p>
+                        <p class="cartPrice">&dollar;${cartItem.price}</p>
                     </div>
                     <p class="textAlignRight removeMargins"><a href="#" class="removeLink" id="${cartItem.id}">Remove</a></p>
                 </div>
             `;
+            removeFromCart();
         });
 
-        removeFromCart();
     } else {
-        cartCardContainer.innerHTML = '<p id="emptyCart" style="font-style: italic; margin: 0;">The cart is empty</p>';
+        cartCardContainer.innerHTML = '<p id="emptyCart">The cart is empty</p>';
     }
 }
 displayCartProducts();
